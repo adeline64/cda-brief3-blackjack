@@ -1,14 +1,13 @@
 export class Personnage {
-    private cartes: []    
-    private score : number
+    private cartes: number[] = []
+    private score : number = 0
     
-    constructor(cartes: [], score: number) {
-      this.cartes = cartes;
-      this.score = score;
+    constructor() {
+        
     }
 
     demanderCarte(){
-        
+
     }
 
     gagnant(){
