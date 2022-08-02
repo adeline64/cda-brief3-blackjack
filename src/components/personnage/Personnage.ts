@@ -3,14 +3,10 @@ export class Personnage {
     private score : number = 0
     
     constructor() {
-        
-    }
-
-    demanderCarte(){
 
     }
 
     gagnant(){
-
+        
     }
   }
