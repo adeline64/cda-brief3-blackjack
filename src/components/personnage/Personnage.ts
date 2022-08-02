@@ -1,6 +1,6 @@
 export class Personnage {
-    private _cartes: number[] = []
-    private _score : number = 0
+    private _cartes: number[] = [];
+    private _score : number = 0;
     
     constructor() {
 
@@ -11,11 +11,11 @@ export class Personnage {
     }
 
     set cartes(cartes: number[]){
-      this.cartes  = cartes;
+      this._cartes = cartes;
     }
 
     get score() {
-      return this._score
+      return this._score;
     }
 
     set score(score:number){
