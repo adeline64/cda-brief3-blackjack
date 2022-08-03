@@ -9,26 +9,56 @@ let joueur = new Joueur();
 let carteJoueur: number;
 let cartesCroupier: number;
 
-for( let i = 0; i < 2; i++ ) {
-    cartesCroupier = croupier.distribuerCarte();
-    carteJoueur = croupier.distribuerCarte();
-    croupier.cartes.push(cartesCroupier);
-    joueur.cartes.push(carteJoueur);
+donnerCarte();
+afficherCarte();
+calculeScore();
+afficherScore();
+demmander();
+afficherCarte();
+calculeScore();
+afficherScore();
+
+function donnerCarte(): void {
+    console.log("****************************");
+    console.log("Le jeu commence");
+    console.log("****************************");
+
+    for( let i = 0; i < 2; i++ ) {
+        cartesCroupier = croupier.distribuerCarte();
+        carteJoueur = croupier.distribuerCarte();
+        croupier.cartes.push(cartesCroupier);
+        joueur.cartes.push(carteJoueur);
+    }
 }
 
-let demmanderCarte: boolean = joueur.demanderCarte();
-
-if(demmanderCarte) {
-    carteJoueur =croupier.distribuerCarte();
-    joueur.cartes.push(carteJoueur);
+function afficherCarte(): void {
+    console.log("Carte du joueur");
+    console.log(joueur.cartes);    
+    console.log("Carte croupoer");
+    console.log(croupier.cartes[1]);
 }
 
-console.log(croupier.cartes);
-console.log(joueur.cartes);
+function calculeScore(): void {
+    croupier.score = croupier.calculerScore(croupier.cartes);
+    joueur.score = joueur.calculerScore(joueur.cartes);
+}
 
-console.log("=========================");
-let scoreCroupier: number = croupier.calculerScore(croupier.cartes);
-let scoreJoueur: number = joueur.calculerScore(joueur.cartes);
+function afficherScore(): void {
+    console.log("=================================");
+    console.log("Le score du croupier est : "+ croupier.score);
+    console.log("Le score du joueur est : "+ joueur.score);
+}
 
-console.log("Le score du croupier est : "+ scoreCroupier);
-console.log("Le score du joueur est : "+ scoreJoueur);
+function demmander(): void {
+    console.log("=================================");
+    console.log("Le joueur demmande une carte");
+    
+    if(joueur.demanderCarte()) {
+        carteJoueur =croupier.distribuerCarte();
+        joueur.cartes.push(carteJoueur);
+    }
+}
+
+function arreter(): void {
+    
+}
