@@ -23,6 +23,12 @@ if(demmanderCarte) {
     joueur.cartes.push(carteJoueur);
 }
 
-
 console.log(croupier.cartes);
 console.log(joueur.cartes);
+
+console.log("=========================");
+let scoreCroupier: number = croupier.calculerScore(croupier.cartes);
+let scoreJoueur: number = joueur.calculerScore(joueur.cartes);
+
+console.log("Le score du croupier est : "+ scoreCroupier);
+console.log("Le score du joueur est : "+ scoreJoueur);

@@ -1,3 +1,5 @@
+import { Croupier } from "../croupier/Croupier";
+
 export class Personnage {
   private _cartes: number[] = [];
   private _score : number = 0;
@@ -20,6 +22,23 @@ export class Personnage {
 
   set score(score:number){
     this._score = score;
+  }
+
+  calculerScore(cartes:number[]): number {
+    let score: number = 0;
+
+    for(let i= 0; i<cartes.length; i++) {
+      /*if(cartes[i] === 1) {
+        
+      }*/
+
+      if(cartes[i] > 10) {
+        cartes.splice(i, 1, 10);
+      }
+      score += cartes[i];
+    }
+
+    return score;
   }
 
   gagnant(){
