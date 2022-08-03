@@ -1,4 +1,6 @@
 import { Croupier } from "../croupier/Croupier";
+import { Joueur } from "../joueur/Joueur";
+
 
 export class Personnage {
   private _cartes: number[] = [];
@@ -42,6 +44,11 @@ export class Personnage {
   }
 
   gagnant(){
-      
+      if (Joueur.calculerScore()>Croupier.calculerScore()) {
+        console.log("la personne qui a gagné est " + Joueur);
+      }else{
+        console.log("la personne qui a gagné est " + Croupier);
+        
+      }
   }
 }

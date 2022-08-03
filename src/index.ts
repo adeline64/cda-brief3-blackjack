@@ -1,8 +1,10 @@
 import { Croupier } from "./components/croupier/Croupier";
 import { Joueur } from "./components/joueur/Joueur";
+import { Personnage } from "./components/personnage/Personnage";
 
 let croupier = new Croupier();
 let joueur = new Joueur();
+let personnage = new Personnage();
 
 
 
@@ -17,6 +19,8 @@ demmander();
 afficherCarte();
 calculeScore();
 afficherScore();
+gagnant();
+arreter();
 
 function donnerCarte(): void {
     console.log("****************************");
@@ -61,4 +65,15 @@ function demmander(): void {
 
 function arreter(): void {
     
+}
+
+function gagnant() {
+    console.log("======================");
+    console.log("Le gagnant est : ");
+    
+    if(joueur.score>croupier.score){
+        console.log("joueur");
+    }else{
+        console.log("croupier");
+    }
 }
