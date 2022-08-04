@@ -1,6 +1,7 @@
 import { Personnage } from "../personnage/Personnage";
 
 export class Croupier extends Personnage {
+    static calculerScore: any;
 
     prendreCarte(): number {
         return this.distribuerCarte();
