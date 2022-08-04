@@ -26,7 +26,7 @@ export class Personnage {
     this._score = score;
   }
 
-  calculerScore(cartes:number[], s: number): number {
+  calculerScore(cartes:number[]): number {
     let score: number = 0;
 
     for(let i= 0; i<cartes.length; i++) {
