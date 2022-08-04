@@ -26,13 +26,18 @@ export class Personnage {
     this._score = score;
   }
 
-  calculerScore(cartes:number[]): number {
+  calculerScore(cartes:number[], s: number): number {
     let score: number = 0;
 
     for(let i= 0; i<cartes.length; i++) {
-      /*if(cartes[i] === 1) {
-        
-      }*/
+      if(cartes[i] === 1) {
+        cartes.splice(i, 1, 11);
+        score += cartes[i];
+        if(score > 21) {
+          cartes.splice(i, 1, 1);
+          score += cartes[i];
+        }
+      }
 
       if(cartes[i] > 10) {
         cartes.splice(i, 1, 10);
