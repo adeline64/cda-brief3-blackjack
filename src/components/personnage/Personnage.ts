@@ -42,23 +42,4 @@ export class Personnage {
 
     return score;
   }
-
-  gagnant(scoreJoueur: number, scoreCroupier: number): void{
-    
-    if( scoreJoueur === 21) {
-      console.log("Le joueur gagne");
-      
-    }
-    
-    if( scoreJoueur > 21) {
-      console.log("Le Croupier gagne");
-      
-    }
-
-    if(scoreCroupier > 21 ) {
-      console.log("Le joueur gagne");
-      
-    }
-
-  }
 }
