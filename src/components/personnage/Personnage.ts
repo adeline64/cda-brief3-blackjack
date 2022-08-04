@@ -48,7 +48,6 @@ export class Personnage {
         console.log("la personne qui a gagné est " + Joueur);
       }else{
         console.log("la personne qui a gagné est " + Croupier);
-        
       }
   }
 }
