@@ -43,11 +43,22 @@ export class Personnage {
     return score;
   }
 
-  gagnant(){
-      if (Joueur.calculerScore()>Croupier.calculerScore()) {
-        console.log("la personne qui a gagné est " + Joueur);
-      }else{
-        console.log("la personne qui a gagné est " + Croupier);
-      }
+  gagnant(scoreJoueur: number, scoreCroupier: number): void{
+    
+    if( scoreJoueur === 21) {
+      console.log("Le joueur gagne");
+      
+    }
+    
+    if( scoreJoueur > 21) {
+      console.log("Le Croupier gagne");
+      
+    }
+
+    if(scoreCroupier > 21 ) {
+      console.log("Le joueur gagne");
+      
+    }
+
   }
 }

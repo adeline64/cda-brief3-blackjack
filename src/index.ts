@@ -38,7 +38,7 @@ function donnerCarte(): void {
 function afficherCarte(): void {
     console.log("Carte du joueur");
     console.log(joueur.cartes);    
-    console.log("Carte croupoer");
+    console.log("Carte croupier");
     console.log(croupier.cartes[1]);
 }
 
@@ -69,11 +69,20 @@ function arreter(): void {
 
 function gagnant() {
     console.log("======================");
-    console.log("Le gagnant est : ");
+
+    if( joueur.score === 21) {
+        console.log("Le joueur gagne");
+        
+    }
     
-    if(joueur.score>croupier.score){
-        console.log("joueur");
-    }else{
-        console.log("croupier");
+    if( joueur.score > 21) {
+        console.log("Le Croupier gagne");
+        
+    }
+
+    if(croupier.score > 21 ) {
+        console.log("Le joueur gagne");
+        
     }
 }
+
