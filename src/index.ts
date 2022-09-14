@@ -67,7 +67,7 @@ function arreter(): void {
     
 }
 
-function gagnant() {
+function gagnant(): void {
     console.log("======================");
 
     if( joueur.score === 21) {
@@ -84,5 +84,11 @@ function gagnant() {
         console.log("Le joueur gagne");
         
     }
+
+    if(croupier.score === 21){
+        console.log("Le croupier gagne");
+        
+    }
+
 }
 
